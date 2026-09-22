@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="خدمة تصميم رقمي احترافية تحوّل فكرتك إلى حضور بصري مؤثر.">
+  <meta name="theme-color" content="#10131f">
+  <title>نسق — تصميم يليق بفكرتك</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+    :root {
+      --ink: #10131f;
+      --muted: #6b6f7f;
+      --paper: #fcfbf8;
+      --warm: #f1ede4;
+      --line: rgba(16, 19, 31, .11);
+      --coral: #e56d4a;
+      --coral-dark: #bd4f31;
+      --sand: #d7bb8b;
+      --green: #239b68;
+      --shadow: 0 24px 70px rgba(26, 26, 34, .12);
+      --radius-lg: 34px;
+      --radius-md: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Cairo", Tahoma, Arial, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1160px, calc(100% - 48px)); margin: 0 auto; }
+
+    .announcement {
+      color: #fff;
+      background: var(--ink);
+      text-align: center;
+      font-size: .78rem;
+      letter-spacing: .02em;
+      padding: 9px 18px;
+    }
+    .announcement span {
+      color: #f2c999;
+      margin-inline-start: 8px;
+    }
+
+    .nav-wrap {
+      position: relative;
+      z-index: 5;
+      padding: 21px 0;
+    }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -.03em;
+    }
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 38px;
+      height: 38px;
+      color: #fff;
+      background: var(--coral);
+      border-radius: 13px 13px 13px 4px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.25rem;
+      transform: rotate(-7deg);
+    }
+    .brand-label { transform: translateY(1px); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      color: #4f5260;
+      font-size: .88rem;
+      font-weight: 600;
+    }
+    .nav-links a {
+      transition: color .2s ease;
+    }
+    .nav-links a:hover { color: var(--coral-dark); }
+    .nav-note {
+      font-size: .77rem;
+      color: var(--muted);
+      padding-inline-start: 18px;
+      border-inline-start: 1px solid var(--line);
+    }
+
+    .hero {
+      position: relative;
+      padding: 67px 0 98px;
+      isolation: isolate;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 700px;
+      height: 700px;
+      top: -330px;
+      left: -250px;
+      z-index: -1;
+      border: 1px solid rgba(229, 109, 74, .12);
+      border-radius: 50%;
+      box-shadow: 0 0 0 65px rgba(229, 109, 74, .035), 0 0 0 130px rgba(229, 109, 74, .025);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.04fr .96fr;
+      align-items: center;
+      gap: clamp(45px, 8vw, 110px);
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 19px;
+      color: var(--coral-dark);
+      font-size: .79rem;
+      font-weight: 800;
+      letter-spacing: .11em;
+    }
+    .eyebrow::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 2px;
+      background: var(--coral);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 {
+      max-width: 650px;
+      margin-bottom: 22px;
+      font-size: clamp(2.55rem, 5.5vw, 5rem);
+      line-height: 1.14;
+      letter-spacing: -.07em;
+      font-weight: 800;
+    }
+    h1 em {
+      color: var(--coral);
+      font-family: "Playfair Display", Georgia, serif;
+      font-style: normal;
+      font-weight: 700;
+      letter-spacing: -.045em;
+    }
+    .hero-copy {
+      max-width: 520px;
+      color: var(--muted);
+      font-size: 1.02rem;
+      line-height: 2;
+      margin-bottom: 31px;
+    }
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 19px;
+      flex-wrap: wrap;
+    }
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      min-width: 255px;
+      padding: 16px 25px;
+      color: #fff;
+      background: var(--green);
+      border: 1px solid var(--green);
+      border-radius: 15px;
+      box-shadow: 0 12px 26px rgba(35, 155, 104, .23);
+      font-size: .98rem;
+      font-weight: 800;
+      transition: transform .22s ease, box-shadow .22s ease, background .22s ease;
+    }
+    .whatsapp-btn:hover {
+      background: #1d875a;
+      box-shadow: 0 15px 30px rgba(35, 155, 104, .32);
+      transform: translateY(-3px);
+    }
+    .whatsapp-btn svg { width: 23px; height: 23px; flex: 0 0 auto; }
+    .text-link {
+      color: var(--ink);
+      font-size: .84rem;
+      font-weight: 700;
+      border-bottom: 1px solid var(--coral);
+      padding-bottom: 2px;
+      transition: color .2s ease;
+    }
+    .text-link:hover { color: var(--coral-dark); }
+    .hero-aside {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card {
+      position: relative;
+      width: min(100%, 445px);
+      aspect-ratio: .88;
+      overflow: hidden;
+      background: #ebe6dc;
+      border-radius: 33px 33px 8px 33px;
+      box-shadow: var(--shadow);
+      transform: rotate(3deg);
+    }
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      top: -72px;
+      left: -80px;
+      border-radius: 50%;
+      background: var(--coral);
+      opacity: .9;
+    }
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      width: 190px;
+      height: 190px;
+      right: -45px;
+      bottom: -38px;
+      border-radius: 50%;
+      background: var(--sand);
+    }
+    .card-topline {
+      position: absolute;
+      z-index: 2;
+      top: 27px;
+      right: 29px;
+      left: 29px;
+      display: flex;
+      justify-content: space-between;
+      color: rgba(16, 19, 31, .65);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .06em;
+    }
+    .visual-type {
+      position: absolute;
+      z-index: 2;
+      right: 29px;
+      bottom: 37px;
+      left: 29px;
+    }
+    .visual-type small {
+      display: block;
+      margin-bottom: 11px;
+      color: var(--coral-dark);
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+    }
+    .visual-type strong {
+      display: block;
+      max-width: 290px;
+      color: var(--ink);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.3rem);
+      line-height: .98;
+      direction: ltr;
+      text-align: right;
+      letter-spacing: -.06em;
+    }
+    .visual-shape {
+      position: absolute;
+      z-index: 1;
+      top: 95px;
+      left: 50%;
+      width: 172px;
+      height: 172px;
+      background: var(--ink);
+      border-radius: 50% 50% 50% 9px;
+      transform: translateX(-37%) rotate(-22deg);
+    }
+    .visual-shape::after {
+      content: "";
+      position: absolute;
+      inset: 23px;
+      border: 2px solid var(--sand);
+      border-radius: 50%;
+    }
+    .stamp {
+      position: absolute;
+      z-index: 3;
+      top: 57px;
+      right: -35px;
+      display: grid;
+      place-items: center;
+      width: 102px;
+      height: 102px;
+      padding: 15px;
+      color: var(--paper);
+      background: var(--ink);
+      border: 5px solid var(--paper);
+      border-radius: 50%;
+      font-size: .69rem;
+      font-weight: 800;
+      line-height: 1.4;
+      text-align: center;
+      transform: rotate(13deg);
+    }
+
+    .numbers {
+      padding: 26px 0 28px;
+      background: var(--warm);
+      border-block: 1px solid rgba(16, 19, 31, .05);
+    }
+    .number-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .number strong {
+      color: var(--ink);
+      font-size: 1.65rem;
+      letter-spacing: -.04em;
+    }
+
+    section { padding: 112px 0; }
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-bottom: 45px;
+    }
+    .section-heading h2 {
+      max-width: 510px;
+      margin-bottom: 0;
+      font-size: clamp(2rem, 4.3vw, 3.7rem);
+      line-height: 1.2;
+      letter-spacing: -.065em;
+    }
+    .section-heading p {
+      max-width: 340px;
+      margin-bottom: 4px;
+      color: var(--muted);
+      font-size: .9rem;
+      line-height: 1.9;
+    }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .service-card {
+      position: relative;
+      min-height: 268px;
+      padding: 28px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+    .service-card:hover {
+      box-shadow: 0 18px 40px rgba(26, 26, 34, .08);
+      transform: translateY(-6px);
+    }
+    .service-card.featured {
+      color: #fff;
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+    .service-icon {
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      margin-bottom: 31px;
+      color: var(--coral);
+      background: #f8eee9;
+      border-radius: 16px;
+    }
+    .featured .service-icon {
+      color: var(--ink);
+      background: var(--sand);
+    }
+    .service-icon svg { width: 25px; height: 25px; }
+    .service-card h3 {
+      margin-bottom: 9px;
+      font-size: 1.08rem;
+      letter-spacing: -.03em;
+    }
+    .service-card p {
+      max-width: 280px;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: .82rem;
+      line-height: 1.9;
+    }
+    .featured p { color: rgba(255,255,255,.63); }
+    .service-index {
+      position: absolute;
+      top: 27px;
+      left: 28px;
+      color: rgba(16, 19, 31, .27);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.4rem;
+    }
+    .featured .service-index { color: rgba(255,255,255,.4); }
+
+    .process {
+      color: #fff;
+      background: var(--ink);
+      overflow: hidden;
+    }
+    .process .section-heading p { color: rgba(255,255,255,.56); }
+    .process .eyebrow { color: #e9c994; }
+    .process .eyebrow::before { background: #e9c994; }
+    .process .section-heading h2 { color: #fff; }
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,.17);
+    }
+    .step {
+      position: relative;
+      min-height: 205px;
+      padding: 32px 28px 25px 0;
+      border-left: 1px solid rgba(255,255,255,.17);
+    }
+    .step:first-child { padding-right: 0; }
+    .step:last-child { border-left: 0; }
+    .step-number {
+      display: block;
+      margin-bottom: 29px;
+      color: var(--sand);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.1rem;
+      line-height: 1;
+    }
+    .step h3 {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .step p {
+      max-width: 245px;
+      margin: 0;
+      color: rgba(255,255,255,.55);
+      font-size: .8rem;
+      line-height: 1.9;
+    }
+
+    .quote-section { background: #f3eee5; }
+    .quote-grid {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      align-items: center;
+      gap: 75px;
+    }
+    .quote-mark {
+      color: var(--coral);
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 7rem;
+      line-height: .65;
+    }
+    blockquote {
+      margin: 0;
+      font-size: clamp(1.4rem, 3vw, 2.2rem);
+      line-height: 1.55;
+      letter-spacing: -.045em;
+      font-weight: 700;
+    }
+    .quote-credit {
+      display: block;
+      margin-top: 21px;
+      color: var(--muted);
+      font-size: .77rem;
+      font-weight: 600;
+    }
+
+    .cta {
+      position: relative;
+      padding: 93px 0;
+      text-align: center;
+      overflow: hidden;
+    }
+    .cta::before, .cta::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      border: 1px solid rgba(229,109,74,.15);
+      border-radius: 50%;
+    }
+    .cta::before { width: 340px; height: 340px; top: -190px; right: -100px; }
+    .cta::after { width: 255px; height: 255px; bottom: -160px; left: -74px; }
+    .cta .eyebrow { justify-content: center; }
+    .cta h2 {
+      max-width: 640px;
+      margin: 0 auto 17px;
+      font-size: clamp(2rem, 4.5vw, 3.65rem);
+      line-height: 1.2;
+      letter-spacing: -.07em;
+    }
+    .cta p {
+      max-width: 470px;
+      margin: 0 auto 29px;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .cta .whatsapp-btn { min-width: 285px; }
+
+    footer {
+      padding: 25px 0 30px;
+      color: #858795;
+      background: #f3f0e9;
+      border-top: 1px solid var(--line);
+      font-size: .75rem;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+    .designer-link {
+      color: var(--coral-dark);
+      font-weight: 800;
+      border-bottom: 1px solid rgba(189,79,49,.35);
+    }
+    .designer-link:hover { color: var(--ink); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 850px) {
+      .container { width: min(100% - 34px, 650px); }
+      .nav-note { display: none; }
+      .hero { padding: 45px 0 72px; }
+      .hero-grid, .quote-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 48px; }
+      .hero-aside { min-height: 370px; }
+      .hero-card { width: min(100%, 385px); }
+      .section-heading { display: block; margin-bottom: 32px; }
+      .section-heading p { margin-top: 16px; }
+      section { padding: 78px 0; }
+      .quote-grid { gap: 18px; }
+      .quote-mark { font-size: 5rem; }
+    }
+    @media (max-width: 620px) {
+      .nav { align-items: flex-start; }
+      .nav-links { gap: 13px; font-size: .74rem; }
+      .nav-links a:nth-child(2) { display: none; }
+      h1 { font-size: clamp(2.5rem, 13vw, 4rem); }
+      .hero-copy { font-size: .91rem; }
+      .hero-actions { align-items: flex-start; flex-direction: column; }
+      .whatsapp-btn { width: 100%; }
+      .number-grid, .service-grid, .steps { grid-template-columns: 1fr; }
+      .number-grid { gap: 12px; }
+      .number { justify-content: flex-start; }
+      .service-card { min-height: 225px; }
+      .step, .step:first-child { min-height: auto; padding: 25px 0; border-left: 0; border-bottom: 1px solid rgba(255,255,255,.17); }
+      .step:last-child { border-bottom: 0; }
+      .step-number { margin-bottom: 17px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .stamp { right: -17px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">تفاصيل صغيرة تصنع فرقًا كبيرًا <span>✦</span> تصميم يُشبهك</div>
+
+  <header class="nav-wrap">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="نسق - الصفحة الرئيسية">
+        <span class="brand-mark">ن</span>
+        <span class="brand-label">نَسَق</span>
+      </a>
+      <nav class="nav-links" aria-label="التنقل الرئيسي">
+        <a href="#service">الخدمة</a>
+        <a href="#process">طريقة العمل</a>
+        <span class="nav-note">حضور بصري لا يُنسى</span>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">خدمة التصميم الرقمي</div>
+          <h1>فكرتك تستحق <em>شكلاً</em> يليق بها.</h1>
+          <p class="hero-copy">
+            نصنع لك حضورًا بصريًا واضحًا وجذابًا — من أول انطباع حتى آخر تفصيلة —
+            لتظهر خدمتك بثقة، وتصل إلى الأشخاص المناسبين بسهولة.
+          </p>
+          <div class="hero-actions">
+            <a class="whatsapp-btn" href="https://wa.me/966539575643?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A7%D9%84%D8%AE%D8%AF%D9%85%D8%A9" target="_blank" rel="noopener" aria-label="التواصل عبر واتساب">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M20.5 11.1a8.3 8.3 0 0 1-12.27 7.3L3.5 19.5l1.15-4.58A8.3 8.3 0 1 1 20.5 11.1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M8.2 8.2c.2-.42.42-.43.77-.43h.34c.17 0 .36.06.46.34l.62 1.51c.1.25.05.4-.08.57l-.4.5c-.13.15-.27.31-.12.57.15.27.67 1.1 1.45 1.78.98.86 1.8 1.13 2.06 1.25.26.12.41.1.56-.07l.67-.78c.16-.18.32-.15.54-.08l1.42.68c.24.12.4.18.46.28.06.1.06.6-.14 1.16-.2.55-1.02.91-1.42.94-.36.03-.81.14-2.72-.65-2.25-.93-3.7-3.25-3.81-3.4-.12-.16-.9-1.2-.9-2.29 0-1.1.57-1.63.8-1.88Z" fill="currentColor"/>
+              </svg>
+              ابدأ محادثة على واتساب
+            </a>
+            <a class="text-link" href="#service">تعرّف على الخدمة ↓</a>
+          </div>
+        </div>
+
+        <div class="hero-aside reveal">
+          <div class="hero-card" aria-label="لوحة تصميم تجريدية">
+            <div class="card-topline"><span>EST. 2024</span><span>01 / 03</span></div>
+            <div class="visual-shape"></div>
+            <div class="stamp">صُمّم<br>بشغف<br>لك</div>
+            <div class="visual-type">
+              <small>YOUR BRAND / YOUR STORY</small>
+              <strong>Make<br>it matter.</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="numbers">
+      <div class="container number-grid">
+        <div class="number"><strong>01</strong><span>فكرة واضحة</span></div>
+        <div class="number"><strong>02</strong><span>تصميم مدروس</span></div>
+        <div class="number"><strong>03</strong><span>انطباع يدوم</span></div>
+      </div>
+    </div>
+
+    <section id="service">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">ماذا نقدّم؟</div>
+            <h2>كل ما تحتاجه لتظهر بأفضل صورة.</h2>
+          </div>
+          <p>نرتب رسالتك، ونبني لها لغة بصرية متناسقة، ثم نحولها إلى تجربة سهلة ومقنعة.</p>
+        </div>
+        <div class="service-grid">
+          <article class="service-card reveal">
+            <span class="service-index">01</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M4 5.5A1.5 1.5 0 0 1 5.5 4h13A1.5 1.5 0 0 1 20 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="currentColor" stroke-width="1.7"/>
+                <path d="m7 16 3.3-3.4 2.4 2 2.4-3 2 2.4M8 8.2h.01" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>هوية بصرية متكاملة</h3>
+            <p>ألوان، خطوط، وعناصر بصرية تمنح علامتك شخصية ثابتة وسهلة التذكر.</p>
+          </article>
+          <article class="service-card featured reveal">
+            <span class="service-index">02</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 18.5 18.5 5M7.2 5H19v11.8M5 9.4v9.1h9.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>صفحة هبوط مؤثرة</h3>
+            <p>صفحة مرتبة تقود الزائر من الفضول إلى اتخاذ الخطوة المناسبة بثقة.</p>
+          </article>
+          <article class="service-card reveal">
+            <span class="service-index">03</span>
+            <div class="service-icon">
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 3.8a8.2 8.2 0 1 0 8.2 8.2c0-.5 0-1.1-.13-1.6H12v2.7h4.6a4.9 4.9 0 1 1-4.6-6.6c1.3 0 2.45.45 3.36 1.2l2-1.95A8.18 8.18 0 0 0 12 3.8Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3>محتوى بصري للسوشيال</h3>
+            <p>قوالب وتصاميم تمنح حضورك اليومي اتساقًا، وتزيد وضوح رسالتك.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="container">
+        <div class="section-heading reveal">
+          <div>
+            <div class="eyebrow">من الفكرة إلى الظهور</div>
+            <h2>بسيطة، مرتبة، ومصممة لك.</h2>
+          </div>
+          <p>لا نغرقك في التفاصيل. نسمعك أولاً، ثم نترجم ما تريد إلى نتيجة تراها وتشعر بها.</p>
+        </div>
+        <div class="steps">
+          <article class="step reveal">
+            <span class="step-number">01</span>
+            <h3>نستمع</h3>
+            <p>نفهم خدمتك، جمهورك، وما تريد أن يشعر به العميل من أول لحظة.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">02</span>
+            <h3>نصمّم</h3>
+            <p>نحوّل الفكرة إلى اتجاه بصري واضح يجمع الجمال والهدف.</p>
+          </article>
+          <article class="step reveal">
+            <span class="step-number">03</span>
+            <h3>نطلق</h3>
+            <p>نسلّمك حضورًا جاهزًا للاستخدام، ويبدأ معه انطباعك الجديد.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-section">
+      <div class="container quote-grid reveal">
+        <div class="quote-mark">“</div>
+        <div>
+          <blockquote>التصميم الجيد لا يكتفي بأن يبدو جميلًا؛ بل يجعل اختيارك أسهل.</blockquote>
+          <span class="quote-credit">— فلسفة العمل في نَسَق</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container reveal">
+        <div class="eyebrow">جاهز للخطوة الأولى؟</div>
+        <h2>خلّينا نبدأ شيئًا يشبهك.</h2>
+        <p>اكتب لنا فكرتك على واتساب، وسنعود لك بالتفاصيل المناسبة لخدمتك.</p>
+        <a class="whatsapp-btn" href="https://wa.me/966539575643?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A8%D8%AF%D8%A1%20%D9%85%D8%B4%D8%B1%D9%88%D8%B9%20%D8%AA%D8%B5%D9%85%D9%8A%D9%85" target="_blank" rel="noopener" aria-label="التواصل عبر واتساب">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20.5 11.1a8.3 8.3 0 0 1-12.27 7.3L3.5 19.5l1.15-4.58A8.3 8.3 0 1 1 20.5 11.1Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+            <path d="M8.2 8.2c.2-.42.42-.43.77-.43h.34c.17 0 .36.06.46.34l.62 1.51c.1.25.05.4-.08.57l-.4.5c-.13.15-.27.31-.12.57.15.27.67 1.1 1.45 1.78.98.86 1.8 1.13 2.06 1.25.26.12.41.1.56-.07l.67-.78c.16-.18.32-.15.54-.08l1.42.68c.24.12.4.18.46.28.06.1.06.6-.14 1.16-.2.55-1.02.91-1.42.94-.36.03-.81.14-2.72-.65-2.25-.93-3.7-3.25-3.81-3.4-.12-.16-.9-1.2-.9-2.29 0-1.1.57-1.63.8-1.88Z" fill="currentColor"/>
+          </svg>
+          تواصل معنا عبر واتساب
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year">2026</span> نَسَق. جميع الحقوق محفوظة.</div>
+      <div>تم التصميم بواسطة <a class="designer-link" href="https://wa.me/201029095046?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85.%20%D9%86%D8%AC%D9%88%D9%89%20%D8%A5%D8%A8%D8%B1%D8%A7%D9%87%D9%8A%D9%85" target="_blank" rel="noopener">م. نجوى إبراهيم</a></div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var year = document.getElementById("year");
+      if (year) year.textContent = new Date().getFullYear();
+
+      var items = document.querySelectorAll(".reveal");
+      if (!("IntersectionObserver" in window)) {
+        items.forEach(function (item) { item.classList.add("visible"); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(function (entries, obs) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      items.forEach(function (item) { observer.observe(item); });
+    }());
+  </script>
+</body>
+</html>
